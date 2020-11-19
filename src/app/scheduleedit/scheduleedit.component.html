@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-sm ">
+  
+   <ul class="navbar-nav">
+     
+     <li class="nav-item">
+       <a routerLink="/" class="nav-link" routerLinkActive="active">Logout</a>
+     </li>
+   </ul>
+ </nav>
+<html><body>
+   
+   <h1 style="text-align: center;">Update Details</h1>
+<form class="login-page" #editForm='ngForm' (ngSubmit)='editForm.valid && edit()'>
+
+ <br>
+ <label>TeamOne
+     <input type='text' [(ngModel)]='editMatch.teamOne' name='teamOne' id='teamOne' disabled #teamOne=ngModel>
+  </label>
+  <br>
+  <label>TeamTwo
+     <input type='text' [(ngModel)]='editMatch.teamTwo' name='teamTwo' id='teamTwo' disabled #teamTwo=ngModel>
+  </label>
+  <br>
+  <label>Date
+     <input type='date' [(ngModel)]='editMatch.date'  name='date' id='date' disabled #date=ngModel>
+  </label>
+  <br>
+  <label>StartTime
+   <input type='time' [(ngModel)]='editMatch.start_time'  name='start_time' id='start_time' disabled #time=ngModel>
+</label>
+<br>
+<br>
+  <label>EndTime
+   <input type='time' [(ngModel)]='editMatch.end_time'  name='end_time' id='end_time' disabled #time=ngModel>
+</label>
+<br>
+<label>Stadium
+   <input type='text' [(ngModel)]='editMatch.stadium'  name='stadium' id='stadium' disabled #stadium=ngModel>
+</label>
+<br>
+<label>winner
+   <input type='text' [(ngModel)]='editMatch.winner'  name='winner' id='winner' #winner=ngModel>
+</label>
+<br>
+<label>Status
+  
+   <select [(ngModel)]='editMatch.status'  name='status' id='status'  #status=ngModel>
+     <option value="Completed">Completed</option>
+     <option value="InProgress">InProgress</option>
+     <option value="Delayed">Delayed</option>
+     <option value="YetToStart">YetToStart</option>
+   </select>
+</label>
+<br>
+<label>delay
+   <input type='text' [(ngModel)]='editMatch.delay'  name='delay' id='delay'  #delay=ngModel>
+</label>
+<br>
+
+  
+ <div class="form-group">
+ <button type="submit" class="btn btn-success center-block">Edit</button>
+ </div>
+</form>
+<div *ngIf="edited">
+ <button routerLink="/list"style="font-size : 30px; width: 20%; height: 50px;">Show List</button>  <br><br>
+</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+}
+:host html{
+  height: 100%;
+}
+:host body{
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+:host .mainimg {
+  background-image: url("main.jpg");
+  background-color: #cccccc;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  
+}
+
+/* Style the header */
+.header {
+  grid-area: header;
+
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+}
+
+/* The grid container */
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+    'header header header header header header' 
+    'left left middle middle right right' 
+    'footer footer footer footer footer footer';
+  /* grid-column-gap: 10px; - if you want gap between the columns */
+} 
+
+
+.right {
+  padding: 50px;
+  margin-right: 140px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Style the left column */
+.left {
+  padding: 50px;
+  margin-left: 220px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Style the middle column */
+.middle {
+  grid-area: middle;
+}
+
+/* Style the right column */
+.right {
+  grid-area: right;
+}
+
+/* Style the footer */
+.footer {
+  grid-area: footer;
+  padding: 10px;
+  text-align: center;
+  font-size: xx-large;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .grid-container  {
+    grid-template-areas: 
+      'header header header header header header' 
+      'left left left left left left' 
+      'middle middle middle middle middle middle' 
+      'right right right right right right' 
+      'footer footer footer footer footer footer';
+  }
+}

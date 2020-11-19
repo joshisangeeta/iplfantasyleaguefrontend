@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-sm ">
+  
+  <ul class="navbar-nav">
+    
+    <li class="nav-item">
+      <a routerLink="/" class="nav-link" routerLinkActive="active">Logout</a>
+    </li>
+  </ul>
+</nav>
+<html >
+<head>
+  <style>
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 100%;
+      border: 1px solid rgb(33, 146, 211);
+    }
+    
+    th, td {
+      text-align: left;
+      padding: 16px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #65f1f1;
+    }
+    </style>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <h2>Leaderboard</h2>
+ 
+<html>
+    <body style="text-align: center;">
+        <div class="container">
+<table  >
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>BidderName</th>
+            <th>BidderPoints</th>
+            <th>BidsParticipated</th>
+            <th>BidsWon</th>
+        </tr>
+    </thead>
+    <tbody *ngFor='let leaderboards of leaderboard'   >
+        <tr>
+            <td>{{leaderboards.id}}</td>
+            <td>{{leaderboards.bidderName}}</td>
+            <td>{{leaderboards.bidderPoints}}</td>
+            <td>{{leaderboards.bidsParticipated}}</td>
+            <td>{{leaderboards.bidsWon}}</td>
+            
+          
+          
+            
+        </tr>
+  
+    </tbody>
+    
+</table>
+ 
+</div>
+</body>
+</html>

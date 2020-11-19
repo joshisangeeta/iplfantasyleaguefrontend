@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-sm ">
+  
+    <ul class="navbar-nav">
+      
+      <li class="nav-item">
+        <a routerLink="/" class="nav-link" routerLinkActive="active">Logout</a>
+      </li>
+    </ul>
+  </nav>
+  
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Team1</th>
+            <th>Team2</th>
+            <th>Bidding info</th>
+        </tr>
+    </thead>
+           <tbody>
+             <tr *ngFor='let match of matches'>
+               <td>{{match.matchId}}</td>
+               <td>{{match.teamOne}}</td>
+               <td>{{match.teamTwo}}</td>   
+         <td><a [routerLink]='["/details",match.matchId]' style="text-align: center;">Match Details</a>
+         </tr>
+      </tbody>
+         </table>

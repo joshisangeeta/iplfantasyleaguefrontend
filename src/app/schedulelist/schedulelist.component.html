@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-sm ">
+  
+  <ul class="navbar-nav">
+    
+    <li class="nav-item">
+      <a routerLink="/" class="nav-link" routerLinkActive="active">Logout</a>
+    </li>
+  </ul>
+</nav>
+
+<head>
+    <style>
+        table {
+          border-collapse: collapse;
+          border-spacing: 0;
+          width: 100%;
+          border: 1px solid rgb(33, 146, 211);
+        }
+        
+        th, td {
+          text-align: left;
+          padding: 16px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #65f1f1;
+        }
+        </style>
+      <title>Bootstrap Example</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+       
+    <div class="container">
+      <h2>Pointstable</h2>
+    <html>
+        <body style="text-align: center;">
+            
+            <div class="container">
+    <table  >
+        <thead>
+            <tr>
+                <th>MatchId</th>
+                <th>TeamOne</th>
+                <th>TeamTwo</th>
+                <th>Date</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Stadium</th>
+                <th>Winner</th>
+                <th>Status</th>
+                <th>Delay</th>
+                <th>Edit</th>
+                
+            </tr>
+        </thead>
+        <tbody *ngFor='let match of matches'   >
+            <tr>
+                <td>{{match.matchId}}</td>
+                <td>{{match.teamOne}}</td>
+                <td>{{match.teamTwo}}</td>
+                <td>{{match.date}}</td>
+                <td>{{match.start_time}}</td>
+                <td>{{match.end_time}}</td>
+                <td>{{match.stadium}}</td>
+                <td>{{match.winner}}</td>
+                <td>{{match.status}}</td>
+                <td>{{match.delay}}</td>
+                <td><button><a [routerLink]='["/scheduleedit",match.matchId]'>Edit</a></button></td>
+                
+              
+              
+                
+            </tr>
+           
+        </tbody>
+        
+    </table>
+     
+    </div>
+
+    </body>

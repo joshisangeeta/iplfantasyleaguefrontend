@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-sm ">
+  
+    <ul class="navbar-nav">
+      
+      <li class="nav-item">
+        <a routerLink="/" class="nav-link" routerLinkActive="active">Logout</a>
+      </li>
+    </ul>
+  </nav>
+  
+<form #editForm ='ngForm' (ngSubmit) = 'cancel()'>
+    <label>Email
+        <input type="email" [(ngModel)]='newBidding.email' name='email' #email= ngModel>
+    </label><br>
+    
+    
+    <div class="form-group">
+        <button type="submit" class="btn" btn-success center-block>cancel</button>
+    </div>
+    
+    </form>

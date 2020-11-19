@@ -1,0 +1,60 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="admin.component.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+<body>
+  <div class ="mainimg">
+<div class="body1" >
+
+
+  <h1>WELCOME ADMIN</h1>
+
+  <button class="submit" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>  
+
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" #adminForm='ngForm' (ngSubmit)='loginMethod()' ngNativeValidate>
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="assets/imgavatar2.png" alt="Avatar" >
+    </div>
+
+    <div class="container">
+      <label for="uname"><h3><b>Username</b></h3></label>
+      <input type="text" placeholder="Enter Username" name="uname" [(ngModel)]='admin.userName' #userName='ngModel' required>
+
+      <label for="psw"><h3><b>Password</b></h3></label>
+      <input type="password" placeholder="Enter Password" name="psw" [(ngModel)]='admin.password' #password='ngModel' required>
+        
+      <button type="submit"  [disabled]='adminForm.invalid' ><h3>Login</h3></button>
+      <p class="message"> </p>
+      
+      
+    
+    </div>
+
+    
+  </form>
+</div>
+</div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<div *ngIf='isAdmin'>
+  <button [routerLink]='["/adminhome"]'>button</button>
+</div>
+</body>
+</html>
